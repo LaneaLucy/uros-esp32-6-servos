@@ -14,24 +14,23 @@ extern "C" {
 #endif
 
 /**
- * @brief sets up the servo on given pin and initialises the mcpwm module on ESP32 for the pin
- *
- * @param  servo_pin the ESP32 pin for the servo
- *
- * @return
- *     - calculated pulse width
- */
-void servo_driver_initialize(uint32_t servo_pin);
-
-/**
- * @brief Use this function to change the servo
- *
- * @param  the angle in degrees to which servo has to rotate
+ * @brief sets up the servo's on given pin's and initialises the mcpwm module on ESP32 for the pin's
  *
  * @return
  *     - void
  */
-void set_servo_angle(uint32_t degree_angle);
+void servo_driver_initialize();
+
+/**
+ * @brief Use this function to change the servo
+ *
+ * @param degree_angle  the angle in degrees to which servo has to rotate
+ * @param channel  which servo has to rotate
+ *
+ * @return
+ *     - void
+ */
+void set_servo_angle(uint32_t degree_angle, uint32_t channel);
 
 #ifdef __cplusplus
 }
